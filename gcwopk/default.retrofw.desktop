@@ -2,11 +2,9 @@
 Name=Daphne
 Comment=Laserdisc game emulator
 Exec=start.sh %f
-Terminal=false
+Terminal=true
 Type=Application
 StartupNotify=true
 Icon=daphne
 Categories=emulators;
-MimeType=application/zip;
-X-OD-NeedsDownscaling=true
-X-OD-Manual=gcw0manual.txt
+X-OD-Manual=retrofwmanual.txt

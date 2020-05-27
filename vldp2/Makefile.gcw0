@@ -11,11 +11,11 @@ CC = mipsel-linux-gcc
 #DFLAGS = -O3 -march=i686 -fomit-frame-pointer -funroll-loops -DVLDP_BENCHMARK
 
 # Standard version
-DFLAGS = -O3 -march=mips32r2 -fomit-frame-pointer -funroll-loops -fPIC -ffast-math -DGCWZERO
+DFLAGS = -O3 -march=mips32 -fomit-frame-pointer -funroll-loops -fPIC -ffast-math -DGCWZERO
 
 #DFLAGS += -fPIC
-CFLAGS = ${DFLAGS} `/opt/gcw0-toolchain/usr/mipsel-gcw0-linux-uclibc/sysroot/usr/bin/sdl-config --cflags` -I./include
-LIBS = `/opt/gcw0-toolchain/usr/mipsel-gcw0-linux-uclibc/sysroot/usr/bin/sdl-config --libs`
+CFLAGS = ${DFLAGS} `sdl-config --cflags` -I./include
+LIBS = `sdl-config --libs`
 
 OBJS =  vldp/vldp.o vldp/vldp_internal.o vldp/mpegscan.o \
 	libmpeg2/cpu_accel.o libmpeg2/alloc.o libmpeg2/cpu_state.o \
