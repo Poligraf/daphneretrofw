@@ -1,11 +1,10 @@
 Daphne Laserdisc Emulator
 
 By Matt Ownby
-GCW0 port by David Knight
+GCW0 port by David Knight converted to Retrofw by Poligraf aka JOCO_MKNZ
 Thanks to Xaijiqq from the Dingoonity forums for testing.
 
 Homepage: www.daphne-emu.com
-GCW0 port sourcecode: www.github.com/DavidKnight247/Daphne
 
 Daphne is an emulator which plays classic arcade laserdisc games from the 1980's. Probably the most famous of which was Dragons Lair. 
 Instructions for how to get these titles to run are below.
