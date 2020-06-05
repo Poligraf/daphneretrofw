@@ -2,15 +2,13 @@ Daphne Laserdisc Emulator
 
 By Matt Ownby
 GCW0 port by David Knight converted to Retrofw by Poligraf aka JOCO_MKNZ
-Thanks to Xaijiqq from the Dingoonity forums for testing.
-
-Homepage: www.daphne-emu.com
 
 Daphne is an emulator which plays classic arcade laserdisc games from the 1980's. Probably the most famous of which was Dragons Lair. 
-Instructions for how to get these titles to run are below.
 
-IMPORTANT
-Daphne contains copyright sound assets which have been removed from this version. If you wish to add these then they need to be placed into the $HOME/.daphne/sound folder. 
+IMPORTANT -----SOUND ISSUES
+Daphne contains copyright sound assets which have been removed from this version. 
+
+You must add them to your $HOME/.daphne/sound folder for some games to work. 
 Check the daphne website to get the sound folder from the PC installation and copy the files to your gcw0. The daphne log file ($HOME/.daphne/daphne_log.txt) will note the name and location of these files for you if you get stuck.
 
 Controls
@@ -57,86 +55,176 @@ www.ffmpeg.zeranoe.com/builds/ and download the latest static build.
 Once unpacked, place the .m2v file you want to convert into the "bin" directory.
 Then run "ff-prompt.bat". A command-line will pop-up.
 
-Now type the following depending on which game you are playing:
+Now type the following depending on which game you want to convert:
 
 Space Ace
 ffmpeg -i ace.m2v -b:v 2000k -vcodec mpeg2video -filter:v yadif -s 320x240 ace.mpg
 ffmpeg -i ace.mpg -vcodec copy -an ace.m2v
-(currently untested)
+ffmpeg -i "ace.ogg" -acodec libvorbis -f ogg "ace2.ogg"
+rm ace.mpg
+rm ace.ogg
+mv ace2.ogg ace.ogg
 
 Astron Belt
 ffmpeg -i astron.m2v -b:v 2000k -vcodec mpeg2video -filter:v yadif -s 256x240 astron.mpg
 ffmpeg -i astron.mpg -vcodec copy -an astron.m2v
+ffmpeg -i "astron.ogg" -acodec libvorbis -f ogg "astron2.ogg"
+rm astron.mpg
+rm astron.ogg
+mv astron2.ogg astron.ogg
 
 Badlands
 ffmpeg -i badlands.m2v -b:v 2000k -vcodec mpeg2video -filter:v yadif -s 320x240 badlands.mpg
 ffmpeg -i badlands.mpg -vcodec copy -an badlands.m2v
+ffmpeg -i "badlands.ogg" -acodec libvorbis -f ogg "badlands2.ogg"
+rm badlands.mpg
+rm badlands.ogg
+mv badlands2.ogg badlands.ogg
+
 
 Bega's Battle
 ffmpeg -i bega.m2v -b:v 2000k -vcodec mpeg2video -filter:v yadif -s 256x240 bega.mpg
 ffmpeg -i bega.mpg -vcodec copy -an bega.m2v
+ffmpeg -i "bega.ogg" -acodec libvorbis -f ogg "bega2.ogg"
+rm bega.mpg
+rm bega.ogg
+mv bega2.ogg bega.ogg
+
 
 Star Blazer
 ffmpeg -i blazer.m2v -b:v 2000k -vcodec mpeg2video -filter:v yadif -s 256x240 blazer.mpg
 ffmpeg -i blazer.mpg -vcodec copy -an blazer.m2v
-(Currently untested)
+ffmpeg -i "blazer.ogg" -acodec libvorbis -f ogg "blazer2.ogg"
+rm blazer.mpg
+rm blazer.ogg
+mv blazer2.ogg blazer.ogg
 
 Cliff Hanger
 ffmpeg -i cliff.m2v -b:v 2000k -vcodec mpeg2video -filter:v yadif -s 320x240 cliff.mpg
 ffmpeg -i cliff.mpg -vcodec copy -an cliff.m2v
+ffmpeg -i "cliff.ogg" -acodec libvorbis -f ogg "cliff2.ogg"
+rm cliff.mpg
+rm cliff.ogg
+mv cliff2.ogg cliff.ogg
 
 Cobra Command
 ffmpeg -i cobra.m2v -b:v 2000k -vcodec mpeg2video -filter:v yadif -s 256x240 cobra.mpg
 ffmpeg -i cobra.mpg -vcodec copy -an cobra.m2v
+ffmpeg -i "cobra.ogg" -acodec libvorbis -f ogg "cobra.ogg"
+rm cobra.mpg
+rm cobra.ogg
+mv cobra2.ogg cobra.ogg
+
+
 
 Dragon's Lair
 ffmpeg -i lair.m2v -b:v 2000k -vcodec mpeg2video -filter:v yadif -s 320x240 lair.mpg
 ffmpeg -i lair.mpg -vcodec copy -an lair.m2v
+ffmpeg -i "lair.ogg" -acodec libvorbis -f ogg "lair.ogg"
+rm lair.mpg
+rm lair.ogg
+mv lair2.ogg lair.ogg
+
 
 Esh's Aurunmilla
 ffmpeg -i esh.m2v -b:v 2000k -vcodec mpeg2video -filter:v yadif -s 256x240 esh.mpg
 ffmpeg -i esh.mpg -vcodec copy -an esh.m2v
+ffmpeg -i "esh.ogg" -acodec libvorbis -f ogg "esh2.ogg"
+rm esh.mpg
+rm esh.ogg
+mv esh2.ogg esh.ogg
+
+
 
 Galaxy Ranger
-ffmpeg -i galaxy.m2v -b:v 2000k -vcodec mpeg2video -filter:v yadif -s 256x240 galaxy.mpg
-ffmpeg -i galaxy.mpg -vcodec copy -an galaxy.m2v
 (Galaxy ranger also requires the astron bios files. If you get ROM errors then unzip the astron rom and place all files into "galaxy.zip".
 The files then need to be renamed to galaxy.zip, galaxy.txt, galaxyr.ogg and galaxyr.m2v)
+
+ffmpeg -i galaxy.m2v -b:v 2000k -vcodec mpeg2video -filter:v yadif -s 256x240 galaxy.mpg
+ffmpeg -i galaxy.mpg -vcodec copy -an galaxy.m2v
+ffmpeg -i "galaxy.ogg" -acodec libvorbis -f ogg "galaxy2.ogg"
+rm galaxy.mpg
+rm galaxy.ogg
+mv galaxy2.ogg galaxy.ogg
+
+
 
 GP World
 ffmpeg -i gpworld.m2v -b:v 2000k -vcodec mpeg2video -filter:v yadif -s 320x240 gpworld.mpg
 ffmpeg -i gpworld.mpg -vcodec copy -an gpworld.m2v
+ffmpeg -i "gpworld.ogg" -acodec libvorbis -f ogg "gpworld2.ogg"
+rm gpworld.mpg
+rm gpworld.ogg
+mv gpworld2.ogg gpworld.ogg
+
 
 Interstellar
 ffmpeg -i interstellar.m2v -b:v 2000k -vcodec mpeg2video -filter:v yadif -s 256x240 interstellar.mpg
 ffmpeg -i interstellar.mpg -vcodec copy -an interstellar.m2v
+ffmpeg -i "interstellar.ogg" -acodec libvorbis -f ogg "interstellar2.ogg"
+rm interstellar.mpg
+rm interstellar.ogg
+mv interstellar2.ogg interstellar.ogg
+
+
 
 Dragon's Lair 2
-ffmpeg -i lair2.m2v -b:v 2000k -vcodec mpeg2video -filter:v yadif -s 320x240 lair2.mpg
-ffmpeg -i lair2.mpg -vcodec copy -an lair2.m2v
 (There are multiple versions of this romset. If you get crash errors then try renaming the .zip and .txt files to one of the following: 
 lair2.zip, lair2_319_euro.zip, lair2_319_span.zip, lair2_318.zip, lair2_316_euro.zip, lair2_315.zip,
 lair2_314.zip, lair2_300.zip, lair2_211.zip)
 
+ffmpeg -i lair2.m2v -b:v 2000k -vcodec mpeg2video -filter:v yadif -s 320x240 lair2.mpg
+ffmpeg -i lair2.mpg -vcodec copy -an lair2.m2v
+ffmpeg -i "lair2.ogg" -acodec libvorbis -f ogg "lair22.ogg"
+rm lair2.mpg
+rm lair2.ogg
+mv lair22.ogg lair2.ogg
+
+
 M.A.C.H. 3
 ffmpeg -i mach3.m2v -b:v 2000k -vcodec mpeg2video -filter:v yadif -s 256x240 mach3.mpg
 ffmpeg -i mach3.mpg -vcodec copy -an mach3.m2v
+ffmpeg -i "mach3.ogg" -acodec libvorbis -f ogg "mach32.ogg"
+rm mach3.mpg
+rm mach3.ogg
+mv mach332.ogg mach3.ogg
+
 
 Road Blaster
+(in my version I also had to rename the files to rb.ogg, rb.m2v, roadblaster.txt and roadblaster.zip)
+Road blaster needs audio in the /home/retrofw/.daphne/sound folder. Without it the audio will not work 
+
+
 ffmpeg -i roadblaster.m2v -b:v 2000k -vcodec mpeg2video -filter:v yadif -s 256x240 roadblaster.mpg
 ffmpeg -i roadblaster.mpg -vcodec copy -an roadblaster.m2v
-(in my version I also had to rename the files to rb.ogg, rb.m2v, roadblaster.txt and roadblaster.zip)
+ffmpeg -i "roadblaster.ogg" -acodec libvorbis -f ogg "roadblaster2.ogg"
+rm roadblaster.mpg
+rm roadblaster.ogg
+mv roadblaster2.ogg roadblaster.ogg
 
 Super Don Quix-ote
 ffmpeg -i superd.m2v -b:v 2000k -vcodec mpeg2video -filter:v yadif -s 256x240 superd.mpg
 ffmpeg -i superd.mpg -vcodec copy -an superd.m2v
+ffmpeg -i "superd.ogg" -acodec libvorbis -f ogg "superd2.ogg"
+rm superd.mpg
+rm superd.ogg
+mv superd2.ogg superd.ogg
+
 
 Thayer's Quest
+(Will not work, not enough buttons on the handheld to play game comfortably)
 ffmpeg -i tq.m2v -b:v 2000k -vcodec mpeg2video -filter:v yadif -s 320x240 tq.mpg
 ffmpeg -i tq.mpg -vcodec copy -an tq.m2v
+
+
 
 Us vs Them
 ffmpeg -i uvt.m2v -b:v 2000k -vcodec mpeg2video -filter:v yadif -s 256x240 uvt.mpg
 ffmpeg -i uvt.mpg -vcodec copy -an uvt.m2v
+ffmpeg -i "uvt.ogg" -acodec libvorbis -f ogg "uvt2.ogg"
+rm uvt.mpg
+rm uvt.ogg
+mv uvt2.ogg uvt.ogg
+
 
 2015.05.08
