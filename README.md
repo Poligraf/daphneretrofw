@@ -1,6 +1,6 @@
 # Daphne
 
-This is the GCW handheld console port of Daphne, the laserdisc game emulator
+This is the Retrofw port of the GCW port of Daphne.
 
 http://www.gcw-zero.com/
 
